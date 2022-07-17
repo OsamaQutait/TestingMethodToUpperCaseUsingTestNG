@@ -2,32 +2,12 @@ import org.testng.annotations.Test;
 
 public class FirstUnitTest {
     @Test
-    void setup(){
-        System.out.println("opining browser");
-    }
-
-    @Test
-    void login(){
-        System.out.println("This is login test");
-    }
-
-    @Test
-    void teardown(){
-        System.out.println("closing browser");
-    }
-
-    @Test
     void toUpperCase(){
-        String x="HelopfdskposkpoetjroaASFERgdsgsa";
-        assert First.toUpperCase1(x).equals(First.toUpperCase2(x));
+        String word="chANge To UppercaSE";
+        String wordInUpperCaseFromFirstMethod =  Helper.toUpperCase1(word);
+        System.out.println("The output from the first method :: "+wordInUpperCaseFromFirstMethod);
+        String wordInUpperCaseFromSecondMethod =  Helper.toUpperCase2(word);
+        System.out.println("The output from the second method :: "+wordInUpperCaseFromSecondMethod);
+        assert wordInUpperCaseFromFirstMethod.equals(wordInUpperCaseFromSecondMethod) : "there is a bug in your method";
     }
-
-    @Test
-    void square(){
-        int num = 12;
-        assert First.square1(num) == First.square2(num);
-        /*if (First.square1(num) == First.square2(num))
-            System.out.println("True");*/
-    }
-
 }
